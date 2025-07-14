@@ -1,6 +1,6 @@
 "use client"
 
-import { Canvas, useFrame, useThree, extend } from "@react-three/fiber"
+import { Canvas, useFrame, useThree, extend, ReactThreeFiber } from "@react-three/fiber"
 import { shaderMaterial } from "@react-three/drei"
 import { useRef } from "react"
 import * as THREE from "three"
@@ -71,24 +71,24 @@ const BlobShaderMaterial = shaderMaterial({ uTime: 0, uSeedOffset: new THREE.Vec
 
 extend({ BlobShaderMaterial })
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      blobShaderMaterial: ReactThreeFiber.Node<typeof BlobShaderMaterial, typeof BlobShaderMaterial>
-    }
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    blobShaderMaterial: ReactThreeFiber.Node<typeof BlobShaderMaterial, typeof BlobShaderMaterial>
   }
 }
 
 // Material component
 function BlobMaterial() {
-  const ref = useRef<any>()
+  const ref = useRef<THREE.ShaderMaterial>(null!)
   const randomOffset = useRef(new THREE.Vector2(Math.random() * 10.0, Math.random() * 10.0))
-  useFrame(({ clock, size }) => {
+
+  useFrame(({ clock }) => {
     if (ref.current) {
-      ref.current.uTime = clock.getElapsedTime()
-      ref.current.uSeedOffset = randomOffset.current
+      ref.current.uniforms.uTime.value = clock.getElapsedTime()
+      ref.current.uniforms.uSeedOffset.value = randomOffset.current
     }
   })
+
   return <blobShaderMaterial ref={ref} attach="material" />
 }
 
