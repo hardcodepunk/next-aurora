@@ -73,6 +73,7 @@ extend({ BlobShaderMaterial })
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
+    // @ts-expect-error: ReactThreeFiber.Node is available via named import
     blobShaderMaterial: ReactThreeFiber.Node<typeof BlobShaderMaterial, typeof BlobShaderMaterial>
   }
 }
