@@ -45,7 +45,7 @@ const fragmentShader = `
     vec2 pos = vUv - center;
     float radius = length(pos);
 
-    float distortion = smoothNoise(vUv * 2.5 + uTime * 0.2) * 0.06;
+    float distortion = smoothNoise(vUv * 2.5 + uTime * 0.1) * 0.06;
     float blobRadius = 0.45 + distortion;
 
     float alpha = step(radius, blobRadius);
