@@ -8,15 +8,17 @@ const BlobBorder = dynamic(() => import("./BlobBorder").then(mod => mod.BlobBord
   ssr: false,
 })
 
-export default function About() {
+export default function Who() {
   return (
     <div className="relative z-10 flex flex-col md:flex-row justify-center mt-44 mb-64 items-center px-6 md:px-16 text-[#333]">
-      <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0 h-[310px]">
-        <Suspense fallback={<div className="w-[240px] h-[310px] bg-gray-200 rounded-md" />}>
+      {/* Left: Animated Blob Image */}
+      <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+        <Suspense fallback={<div className="w-[450px] h-[600px] bg-gray-200 rounded-md" />}>
           <BlobBorder imageSrc="/eva.jpg" />
         </Suspense>
       </div>
 
+      {/* Right: Text */}
       <div className="w-full md:w-1/2 font-sirenia text-right">
         <h2 className="text-3xl md:text-4xl font-regular">Wie ben ik?</h2>
         <p className="text-base md:text-lg font-thin leading-relaxed mt-4">
