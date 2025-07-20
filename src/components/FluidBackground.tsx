@@ -83,15 +83,29 @@ function BlobMaterial() {
   const ref = useRef<THREE.ShaderMaterial>(null!)
   const randomOffset = useRef(new THREE.Vector2(Math.random() * 10.0, Math.random() * 10.0))
 
-  const scroll = useRef(0)
+  const prevScroll = useRef(0)
+  const speed = useRef(0)
 
   useFrame(({ clock }) => {
-    scroll.current += (window.scrollY - scroll.current) * 0.1 // smooth scroll lerp
-    ref.current.uniforms.uTime.value = clock.getElapsedTime()
-    ref.current.uniforms.uSeedOffset.value.set(
-      randomOffset.current.x + scroll.current * 0.0005,
-      randomOffset.current.y + scroll.current * 0.0002
-    )
+    const now = clock.getElapsedTime()
+    const currentScroll = window.scrollY || 0
+    const scrollDelta = currentScroll - prevScroll.current
+
+    // Smooth speed detection
+    speed.current += (Math.abs(scrollDelta) - speed.current) * 0.1
+    prevScroll.current = currentScroll
+
+    const timeBoost = speed.current * 0.01
+    const finalTime = now + timeBoost
+
+    // Add scroll-based parallax to offset
+    const parallaxStrength = 0.002 // try 0.005 or 0.01 if you want stronger
+    const scrollOffset = new THREE.Vector2(0, -currentScroll * parallaxStrength)
+
+    if (ref.current) {
+      ref.current.uniforms.uTime.value = finalTime
+      ref.current.uniforms.uSeedOffset.value = randomOffset.current.clone().add(scrollOffset)
+    }
   })
 
   return <blobShaderMaterial ref={ref} attach="material" />
