@@ -19,7 +19,7 @@ export default function Who() {
       </div>
 
       {/* Right: Text */}
-      <div className="w-full md:w-1/2 font-sirenia text-right">
+      <div className="w-full md:w-1/2 font-sirenia">
         <h2 className="text-3xl md:text-4xl font-regular">Wie ben ik?</h2>
         <p className="text-base md:text-lg font-thin leading-relaxed mt-4">
           Ik ben Eva De Coster, klinisch psychologe en psychoanalytisch psychotherapeute.
