@@ -88,19 +88,20 @@ function BlobMaterial() {
 
   useFrame(({ clock }) => {
     const now = clock.getElapsedTime()
-    const currentScroll = window.scrollY || 0
-    const scrollDelta = currentScroll - prevScroll.current
+    const scrollY = window.scrollY || 0
+    const delta = scrollY - prevScroll.current
 
-    // Smooth speed detection
-    speed.current += (Math.abs(scrollDelta) - speed.current) * 0.1
-    prevScroll.current = currentScroll
+    const scrollSpeed = Math.abs(delta)
+
+    speed.current += (scrollSpeed - speed.current) * 0.1
 
     const timeBoost = speed.current * 0.01
     const finalTime = now + timeBoost
 
-    // Add scroll-based parallax to offset
-    const parallaxStrength = 0.002 // try 0.005 or 0.01 if you want stronger
-    const scrollOffset = new THREE.Vector2(0, -currentScroll * parallaxStrength)
+    const parallaxStrength = 0.003
+    const scrollOffset = new THREE.Vector2(0, -scrollY * parallaxStrength)
+
+    prevScroll.current = scrollY
 
     if (ref.current) {
       ref.current.uniforms.uTime.value = finalTime
