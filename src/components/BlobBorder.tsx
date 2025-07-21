@@ -6,7 +6,6 @@ import * as THREE from "three"
 import { useRef } from "react"
 import { TextureLoader } from "three/src/loaders/TextureLoader"
 
-// Vertex Shader
 const vertexShader = `
   varying vec2 vUv;
   void main() {
@@ -15,7 +14,6 @@ const vertexShader = `
   }
 `
 
-// Fragment Shader
 const fragmentShader = `
   precision mediump float;
 
@@ -55,17 +53,16 @@ const fragmentShader = `
   }
 `
 
-// Register ShaderMaterial
 const BlobMaterial = shaderMaterial({ uTime: 0, uTexture: null }, vertexShader, fragmentShader)
 extend({ BlobMaterial })
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     blobMaterial: any
   }
 }
 
-// Mesh component
 function BlobMesh({ imageSrc }: { imageSrc: string }) {
   const ref = useRef<THREE.ShaderMaterial>(null!)
   const texture = useLoader(TextureLoader, imageSrc)
@@ -84,7 +81,6 @@ function BlobMesh({ imageSrc }: { imageSrc: string }) {
   )
 }
 
-// Canvas wrapper component
 export function BlobBorder({ imageSrc }: { imageSrc: string }) {
   return (
     <div className="relative w-[450px] h-[600px]">
