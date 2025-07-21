@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="relative z-10 h-screen flex px-6 md:px-16 text-[#333]">
+    <div className="relative z-10 mt-44 mb-64 flex px-6 md:px-16 text-[#333]">
       <div className="max-w-2xl text-left font-sirenia">
         <h2 className="text-3xl md:text-4xl font-regular">Wat kan therapie voor jou betekenen?</h2>
         <p className="text-base md:text-lg font-thin leading-relaxed mt-4">
