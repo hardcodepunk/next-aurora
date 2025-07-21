@@ -112,7 +112,6 @@ function BlobMaterial() {
   return <blobShaderMaterial ref={ref} attach="material" />
 }
 
-// Fullscreen mesh using viewport width/height
 function FullscreenQuad() {
   const { viewport } = useThree()
   return (
@@ -123,7 +122,6 @@ function FullscreenQuad() {
   )
 }
 
-// Export
 export default function FluidBackground() {
   return (
     <div
