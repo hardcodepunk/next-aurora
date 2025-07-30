@@ -1,7 +1,6 @@
 export default function About() {
   return (
     <div className="relative z-10 pt-44 pb-64 flex flex-col md:flex-row justify-between gap-16 px-6 md:px-16 bg-[#cfb27b] font-sirenia">
-      {/* Left Column: Text + CTA */}
       <div className="basis-1/2 max-w-2xl text-left">
         <h2 className="text-3xl md:text-4xl font-regular">Wat kan therapie voor jou betekenen?</h2>
 
@@ -24,7 +23,6 @@ export default function About() {
         </button>
       </div>
 
-      {/* Right Column: Thematic List */}
       <div className="basis-1/2 max-w-xl">
         <h3 className="text-2xl md:text-3xl font-regular mb-4">Thema's waarmee je terecht kan</h3>
         <ul className="list-disc list-inside space-y-2 text-base md:text-lg font-thin leading-relaxed">
