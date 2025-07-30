@@ -15,6 +15,9 @@ export default function About() {
           Therapie wordt steeds persoonlijk afgestemd, met het verlangen die te samen vorm te geven, zodat er voldoende
           ruimte is om jouw unieke levensverhaal en vragen te verkennen.
         </blockquote>
+        <button className="mt-4 px-6 py-2 rounded-full font-sirenia text-white bg-black hover:bg-white hover:text-black transition duration-300">
+          Maak een afspraak
+        </button>
       </div>
     </div>
   )

@@ -28,6 +28,9 @@ export default function Who() {
           Naast mijn werk in de praktijk ben ik afdelingspsychologe binnen het Psychiatrisch Ziekenhuis Onzelievevrouw
           in Brugge.
         </p>
+        <button className="mt-4 px-6 py-2 rounded-full font-sirenia text-white bg-black hover:bg-white hover:text-black transition duration-300">
+          Maak een afspraak
+        </button>
       </div>
     </div>
   )
