@@ -9,7 +9,10 @@ const BlobBorder = dynamic(() => import("./BlobBorder").then(mod => mod.BlobBord
 
 export default function Who() {
   return (
-    <div className="relative z-10 bg-[#faeaae] flex flex-col md:flex-row justify-center pt-28 pb-32 items-center px-6 md:px-16">
+    <div
+      id="wie"
+      className="relative z-10 bg-[#faeaae] flex flex-col md:flex-row justify-center pt-28 pb-32 items-center px-6 md:px-16"
+    >
       <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
         <Suspense fallback={<div className="w-[450px] h-[600px] bg-gray-200 rounded-md" />}>
           <BlobBorder imageSrc="/eva.jpg" />

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative z-10 bg-[#333] text-white py-16 px-6 md:px-16 font-sirenia">
+    <footer id="contact" className="relative z-10 bg-[#333] text-white py-16 px-6 md:px-16 font-sirenia">
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between gap-16">
         <div className="space-y-2 text-left text-base md:text-lg font-thin leading-relaxed">
           <h2 className="text-2xl md:text-3xl font-normal mb-2">Contact</h2>

@@ -1,6 +1,9 @@
 export default function About() {
   return (
-    <div className="relative z-10 pt-44 pb-64 flex flex-col md:flex-row justify-between gap-16 px-6 md:px-16 bg-[#cfb27b] font-sirenia">
+    <div
+      id="wat"
+      className="relative z-10 pt-44 pb-64 flex flex-col md:flex-row justify-between gap-16 px-6 md:px-16 bg-[#cfb27b] font-sirenia"
+    >
       <div className="basis-1/2 max-w-2xl text-left">
         <h2 className="text-3xl md:text-4xl font-regular">Wat?</h2>
 
