@@ -42,9 +42,12 @@ export default function Who() {
             <li>Erkenning door de Psychologencommissie; erkenningsnummer 952118341</li>
           </ul>
         </div>
-        <button className="mt-4 px-6 py-2 rounded-full font-sirenia text-white bg-black hover:bg-white hover:text-black transition duration-300">
+        <a
+          href="#contact"
+          className="inline-block mt-4 px-6 py-2 rounded-full font-sirenia text-white bg-black hover:bg-white hover:text-black transition duration-300"
+        >
           Maak een afspraak
-        </button>
+        </a>
       </div>
     </div>
   )

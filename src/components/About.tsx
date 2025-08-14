@@ -29,9 +29,12 @@ export default function About() {
           nodige tijd om voldoende zicht te kunnen krijgen en houden op wat speelt.
         </blockquote>
 
-        <button className="mt-6 px-6 py-2 rounded-full text-white bg-black hover:bg-white hover:text-black transition duration-300">
+        <a
+          href="#contact"
+          className="inline-block mt-4 px-6 py-2 rounded-full font-sirenia text-white bg-black hover:bg-white hover:text-black transition duration-300"
+        >
           Maak een afspraak
-        </button>
+        </a>
       </div>
 
       <div className="basis-1/2 max-w-xl">
