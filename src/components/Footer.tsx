@@ -1,11 +1,35 @@
+import Image from "next/image"
+
 export default function Footer() {
   return (
-    <footer id="contact" className="relative z-10 bg-[#333] text-white py-16 px-6 md:px-16 font-sirenia">
+    <footer
+      id="contact"
+      className="relative z-10 bg-[#333] text-white py-16 px-6 md:px-16 font-sirenia overflow-hidden"
+    >
+      {/* Flower 4 - positioned at ~4/5 (80%) across */}
+      <Image
+        src="/flower-4.svg"
+        alt="Flower right side"
+        width={250}
+        height={500}
+        className="absolute bottom-[-60px] left-[80%] translate-x-[-50%]"
+      />
+
+      {/* Flower 5 - positioned at 1/2 (center) */}
+      <Image
+        src="/flower-5.svg"
+        alt="Flower center"
+        width={250}
+        height={350}
+        className="absolute bottom-[-60px] left-1/2 -translate-x-1/2"
+      />
+
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between gap-16">
         <div className="space-y-2 text-left text-base md:text-lg font-thin leading-relaxed">
           <h2 className="text-2xl md:text-3xl font-normal mb-2">Contact</h2>
           <p className="font-normal">
-            Gesprekken vinden altijd plaats op afspraak.<br></br> Je kunt een afspraak maken via telefoon of e-mail:
+            Gesprekken vinden altijd plaats op afspraak.
+            <br /> Je kunt een afspraak maken via telefoon of e-mail:
           </p>
           <p>
             <span className="font-normal">Telefoon:</span> 0496 15 97 61
